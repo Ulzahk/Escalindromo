@@ -2,8 +2,9 @@
 
 :root{
     --gray-primary-color:#212121;
-    --blue-primary-color: #2C3E50;
-    --orange-primary-color: #DB8204;
+    --blue-primary-color: #343256;
+    --blue-secondary-color: #8683AA;
+    --orange-primary-color: #FBA730;
 }
 
 html, body, h1, p{
@@ -57,13 +58,13 @@ main .form-container p{
 }
 
 main .form-container div{
-    background-color: wheat;
+    background-color: var(--blue-secondary-color);
     display: grid;
     grid-template-columns: 1fr;
     border-radius: 2.5px;
     margin: 0 10% 0;
     padding: 5% 0;
-    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3)
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,1);
 }
 
 main .form-container div .form-input:hover{
@@ -71,7 +72,7 @@ main .form-container div .form-input:hover{
 }
 
 main .form-container div .form-input{
-    border-radius: 20px;
+    border-radius: 2.5px;
     border: 1px solid #dfe1e5;
     margin: 0 10% 5% 10%;
     padding: 7.5px 0 7.5px 15px;
@@ -118,7 +119,11 @@ main .tries-container{
 }
 
 main .tries-container p{
-    margin-top: -100px;
+    background-color: var(--blue-secondary-color);
+    border-radius: 2.5px;
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,1);
+    margin: -100px 10% 0;
+    padding: 1% 0   ;
 }
 
 

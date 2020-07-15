@@ -1,4 +1,5 @@
 const reviewButton = document.querySelector('.form-button')
+const inputAction = document.getElementById('formInput')
 
 let palindromeTries = []
 
@@ -16,7 +17,6 @@ const palindromeChecker = (word) =>{
     word = word.replace(/ü/g,'u')
     word = word.replace(/\./g,'')
     word = word.replace(/\,/g,'')
-    //, .
     let reverseWord = '' 
     for(let i = word.length; i > -1; i--){
         reverseWord += word.charAt(i)
@@ -41,10 +41,23 @@ const showPalindromeTries = (triesArray) =>{
         }
     }
 }
-// Lista de intentos
-reviewButton.onclick = () => {
-    inputText = document.getElementById("formInput").value
-    palindromeTries.push(inputText)
-    palindromeChecker(inputText)
-    showPalindromeTries(palindromeTries)
-}
+
+
+inputAction.addEventListener('keyup', function(event){
+    if(event.keyCode === 13){
+        event.preventDefault()
+        inputText = document.getElementById('formInput').value
+        palindromeTries.push(inputText)
+        palindromeChecker(inputText)
+        showPalindromeTries(palindromeTries)
+    } else {
+        reviewButton.onclick = () => {
+            inputText = document.getElementById('formInput').value
+            palindromeTries.push(inputText)
+            palindromeChecker(inputText)
+            showPalindromeTries(palindromeTries)
+        }
+    }
+})
+
+
