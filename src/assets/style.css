@@ -3,6 +3,7 @@
 :root{
     --gray-primary-color:#212121;
     --blue-primary-color: #343256;
+    --dark-blue-primary-color: #222138;
     --blue-secondary-color: #8683AA;
     --orange-primary-color: #FBA730;
 }
@@ -28,10 +29,22 @@ main .instructions-container{
     grid-column: 1/2;
     height: 100vh;
     width: auto;
-    background-color: var(--gray-primary-color);
+    background-color: var(--blue-primary-color);
     overflow-y: scroll;
+    color: var(--orange-primary-color);
 }
 
+main .instructions-container .instructions-container-guides{
+    text-align: left;
+    line-height: 140%;
+    padding-right: 5%;
+}
+
+main .instructions-container .list-container{
+    text-align: left;
+    line-height: 140%;
+    padding-right: 5%;
+}
 
 main .form-container{
     grid-row: 1/2;
@@ -68,7 +81,7 @@ main .form-container div{
 }
 
 main .form-container div .form-input:hover{
-    box-shadow: 0 1px 6px 0 #20212447;
+    box-shadow: 0 1px 6px 0 #0c0c0e47;
 }
 
 main .form-container div .form-input{
@@ -76,28 +89,24 @@ main .form-container div .form-input{
     border: 1px solid #dfe1e5;
     margin: 0 10% 5% 10%;
     padding: 7.5px 0 7.5px 15px;
-    outline: none;
-    
+    outline: none; 
 }
 
-main .form-container div .form-input:hover{
-
-}
 
 main .form-container div .form-button{
-    background-color: aliceblue;
-    color: black;
+    background-color: var(--blue-primary-color);
+    color: var(--orange-primary-color);
     font-weight: 700;
     border-radius: 2.5px;
-    border: 1px solid red;
-    margin: 0 25% 0 25%;
+    border: 1px solid #000000;
+    margin: 0 40% 0 40%;
     padding: 7.5px 0 7.5px 0;
     text-decoration: none;
-    
+    box-shadow: 0 1px 1px rgba(0,0,0,1);
 }
 
 main .form-container div .form-button:hover{
-    background-color: rgb(129, 141, 151);
+    background-color: var(--dark-blue-primary-color);
     cursor: pointer;
 }
 
@@ -116,6 +125,7 @@ main .tries-container{
     text-align: center;
     font-size: 5vh;
     font-weight: 700;
+    
 }
 
 main .tries-container p{
@@ -123,13 +133,70 @@ main .tries-container p{
     border-radius: 2.5px;
     box-shadow: 0 2px 2px 2px rgba(0,0,0,1);
     margin: -100px 10% 0;
-    padding: 1% 0   ;
+    padding: 1% 0;
 }
 
 
 
-@media screen and (min-width:768px){
+@media screen and (max-width:1140px) and (min-height: 660px){
+    main{
+        grid-template-columns: 1fr ;
+        grid-template-rows: 3fr 1fr 1fr;
+    }
 
+    main .instructions-container{
+        grid-row: 3/4;
+        grid-column: 1/2;
+        height: 100vh;
+        overflow-y: none;
+        font-size: 2rem;
+    }
+
+    main .instructions-container .instructions-container-guides{
+        padding-left: 5%;
+    }
+    
+    main .instructions-container .list-container{
+        padding-left: 5%;
+    }
+
+    main .form-container{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    main .form-container p {
+        margin-top: -100px;
+    }
+
+    main .form-container div{
+        background-color: var(--blue-secondary-color);
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: 2.5px;
+        margin: -100px auto 0;
+        padding: 7% 32%;
+        box-shadow: 0 2px 2px 2px rgba(0,0,0,1);
+    }
+
+    main .form-container div .form-input{
+        margin: 0 -100% 5% -100%;
+    }
+
+    main .form-container div .form-button{
+        margin: 0 30% 0 30%;
+    }
+    
+
+    main .tries-container{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    main .tries-container p{
+        margin: -125px 8% 0;
+        padding: 3% 3%;
+    }
 }
 
 @media screen and (min-width: 320px){

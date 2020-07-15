@@ -1,8 +1,14 @@
 const reviewButton = document.querySelector('.form-button')
 const inputAction = document.getElementById('formInput')
-
+let enterCounter = 0
 let palindromeTries = []
-
+const enterListener = document.addEventListener('keyup', (event) =>{
+    if(event.keyCode === 13 && enterCounter === 0){
+        event.preventDefault()
+        document.getElementById('formInput').focus()
+        enterCounter++
+    } 
+})
 
 const palindromeChecker = (word) =>{
     //.trim() elimina espacios de los lados
@@ -27,12 +33,12 @@ const palindromeChecker = (word) =>{
     } else if(word !== reverseWord){
         swal('Aquí no tenemos un palindromo 😥', '', 'error')
     } else {
-        swal('Estupendo encontramos un palíndromo 😁', '', 'success')  
+        swal('Estupendo encontramos un palíndromo 😁', '', 'success')
     } 
     console.log(reverseWord)
 }
 
-const showPalindromeTries = (triesArray) =>{
+const showPalindromeTry = (triesArray) =>{
     for(var i = 0; i < triesArray.length; i++){
         if(triesArray[i] === ''){
             document.getElementById("triesText").innerHTML = '(espacio en blanco)'
@@ -42,20 +48,35 @@ const showPalindromeTries = (triesArray) =>{
     }
 }
 
+const showPalindromesList = (triesArray) => {
+    let elementHTML = ''
+    triesArray.forEach( (item) => {
+        elementHTML += '<li>' + item + '</li>'
+    })
+    document.getElementById("list-container").innerHTML = '<ul>' + elementHTML + '</ul>'
+}
 
-inputAction.addEventListener('keyup', function(event){
+const emptyInput = () =>{
+    inputText = document.getElementById('formInput').value = ''
+}
+
+inputAction.addEventListener('keyup', (event) =>{
     if(event.keyCode === 13){
         event.preventDefault()
         inputText = document.getElementById('formInput').value
         palindromeTries.push(inputText)
         palindromeChecker(inputText)
-        showPalindromeTries(palindromeTries)
+        showPalindromeTry(palindromeTries)
+        showPalindromesList(palindromeTries)
+        emptyInput()
     } else {
         reviewButton.onclick = () => {
             inputText = document.getElementById('formInput').value
             palindromeTries.push(inputText)
             palindromeChecker(inputText)
-            showPalindromeTries(palindromeTries)
+            showPalindromeTry(palindromeTries)
+            showPalindromesList(palindromeTries)
+            emptyInput()
         }
     }
 })

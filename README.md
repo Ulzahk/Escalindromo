@@ -1,1 +1,1 @@
-# Scalindromo
+# Escalindromo

@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scalindromo</title>
+    <title>Escalindromo</title>
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="icon" href="./assets/Logo-Scalindromo.png">
+    <link rel="icon" href="./assets/Logo-Scalindromo.png" sizes="64x16">
 </head>
 <body>
     <main>
         <section class="instructions-container">
-
+            <h2>Instrucciones</h2>
+            <div class="instructions-container-guides">
+                <ol>
+                    <li>Selecciona la casilla de texto.</li>
+                    <li>Escribe la palabra o frase que quieras revisar.</li>
+                    <li>Presiona el botón Revisar o la tecla Enter para verificar si es un palíndromo.</li>
+                    <li>Un aviso aparecerá informando el resultado.</li>
+                    <li>En Última Frase Escrita se vera el texto revisado recientemente.</li>
+                    <li>La sección Lista de Frases Probadas, presentara todos los textos que se hayan revisados en esta sesión.</li>
+                    <li>Espero que te sea de utilidad y muchas gracias por usar Escalindromo.</li>
+                </ol>
+            </div>
+            <h3>Lista de Frases Probadas</h3>
+            <div id="list-container" class="list-container">
+            </div>
         </section>
         <section class="form-container">
-            <h1>Scalindromo</h1>
+            <h1>Escalindromo</h1>
             <p>El escaner de palindromos</p>
             <div>
                 <input class="form-input" id="formInput" type="text" placeholder="Escribe tu palindromo aquí">
@@ -22,7 +36,7 @@
         </section>
         <section class="tries-container">
             <h3>Última Frase Escrita:</h3>
-            <p id="triesText">(frase a mostrar)</p>
+            <p id="triesText">(espacio en blanco)</p>
         </section>
     </main>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
