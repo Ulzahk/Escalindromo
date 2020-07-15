@@ -30,7 +30,9 @@ const palindromeChecker = (word) =>{
 
     if (reverseWord === '' || reverseWord === " " || reverseWord === null){
         swal('Recuerda escribir algo en la casilla 😥', '', 'error')
-    } else if(word !== reverseWord){
+    } else if(reverseWord.includes('0') || reverseWord.includes('1') || reverseWord.includes('2') ||reverseWord.includes('3') || reverseWord.includes('4') || reverseWord.includes('5') || reverseWord.includes('6') || reverseWord.includes('7') || reverseWord.includes('8') || reverseWord.includes('9')){
+        swal('Recuerda escribir solamente letras 😥', '', 'error')
+    } else if (word !== reverseWord){
         swal('Aquí no tenemos un palindromo 😥', '', 'error')
     } else {
         swal('Estupendo encontramos un palíndromo 😁', '', 'success')
