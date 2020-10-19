@@ -11,16 +11,16 @@ const enterListener = document.addEventListener('keyup', (event) =>{
 })
 
 const palindromeChecker = (word) =>{
-    //.trim() elimina espacios de los lados
-    //.toLowerCase() cambia todas las letras a minusculas
-    //.replace(/\s+/g, '') cambia los espacios en blanco elimnandolos
     word = word.toLowerCase().trim().replace(/\s+/g, '')
+
     word = word.replace(/á/g,'a')
     word = word.replace(/é/g,'e')
     word = word.replace(/í/g,'i')
     word = word.replace(/ó/g,'o')
     word = word.replace(/ú/g,'u')
+
     word = word.replace(/ü/g,'u')
+
     word = word.replace(/\./g,'')
     word = word.replace(/\,/g,'')
     let reverseWord = '' 
