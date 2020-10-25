@@ -4,9 +4,11 @@
 </h1>
 <p align="center">The palindrome scanner</p>
 <div align="center">
-  <img src="https://img.shields.io/badge/HTML-orange">
-	<img src="https://img.shields.io/badge/CSS-blue">
-	<img src="https://img.shields.io/badge/JavaScript-yellow">
+
+[![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://www.w3.org/TR/html52/)
+[![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3)](https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/)
+[![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat&logo=javascript)](https://www.javascript.com/)
+
 </div>
 <p align="center">Escalindomo is a tool for scan and search panlindromes in words or complete phrases, including a history section to know how much tries have you done.</p>
 
